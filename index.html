@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b0b0f">
+  <meta name="description" content="Digital portfolio of Kotecha Jeet Pareshbhai, B.Voc Agro & Food Processing.">
+  <title>Kotecha Jeet Pareshbhai | Digital Portfolio</title>
+  <style>
+    :root{--bg:#090a0f;--panel:#12141c;--panel2:#171923;--gold:#e8c56b;--gold2:#f7df9b;--text:#f4f2ed;--muted:#a6a7b1;--line:rgba(232,197,107,.22);--shadow:0 18px 55px rgba(0,0,0,.35)}
+    *{box-sizing:border-box;scroll-behavior:smooth}
+    body{margin:0;background:radial-gradient(ellipse at 75% 0%,rgba(126,91,31,.16),transparent 38%),var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.6}
+    a{color:inherit;text-decoration:none}
+    .wrap{width:min(1100px,calc(100% - 36px));margin:auto}
+    header{position:sticky;top:0;z-index:10;background:rgba(9,10,15,.86);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.07)}
+    .nav{display:flex;align-items:center;justify-content:space-between;min-height:72px;gap:16px}
+    .brand{font-weight:800;letter-spacing:.06em}.brand span{color:var(--gold)}
+    nav{display:flex;gap:22px;align-items:center}nav a{font-size:.92rem;color:var(--muted)}nav a:hover{color:var(--gold)}
+    .menu-btn{display:none;background:transparent;color:var(--text);border:1px solid var(--line);border-radius:10px;padding:8px 11px;font-size:1rem}
+    .hero{padding:90px 0 76px;display:grid;grid-template-columns:1.4fr .8fr;gap:52px;align-items:center;min-height:570px}
+    .eyebrow{display:inline-flex;align-items:center;gap:9px;border:1px solid var(--line);background:rgba(232,197,107,.06);color:var(--gold2);border-radius:999px;padding:7px 13px;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase}
+    .dot{width:7px;height:7px;border-radius:50%;background:var(--gold);box-shadow:0 0 14px var(--gold)}
+    h1{font-size:clamp(2.55rem,6vw,5rem);line-height:1.06;letter-spacing:-.055em;margin:22px 0 18px}
+    h1 .gold{color:var(--gold)}
+    .hero p{font-size:1.08rem;color:var(--muted);max-width:620px;margin:0 0 28px}
+    .actions{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:12px 18px;border-radius:12px;font-weight:700;border:1px solid var(--line);transition:transform .2s,background .2s}
+    .btn:hover{transform:translateY(-2px)}.btn.primary{background:linear-gradient(135deg,var(--gold2),var(--gold));color:#18140a;border-color:transparent}.btn.secondary{background:rgba(255,255,255,.03)}
+    .profile-card{position:relative;border:1px solid var(--line);border-radius:28px;padding:28px;background:linear-gradient(145deg,rgba(232,197,107,.1),rgba(255,255,255,.025) 44%),var(--panel);box-shadow:var(--shadow);overflow:hidden}
+    .profile-card:before{content:"";position:absolute;width:220px;height:220px;border:1px solid rgba(232,197,107,.14);border-radius:50%;right:-75px;top:-70px}
+    .monogram{width:118px;height:118px;border-radius:28px;display:grid;place-items:center;font-size:2.2rem;font-weight:900;letter-spacing:-.08em;color:var(--gold2);background:linear-gradient(135deg,#282318,#111219);border:1px solid rgba(232,197,107,.35);box-shadow:inset 0 0 25px rgba(232,197,107,.08);margin-bottom:25px}
+    .profile-card h2{font-size:1.35rem;margin:0 0 4px}.profile-card .role{color:var(--gold);font-size:.92rem;margin:0 0 20px}
+    .mini-row{display:flex;justify-content:space-between;gap:12px;border-top:1px solid rgba(255,255,255,.08);padding:12px 0;font-size:.9rem}.mini-row span:first-child{color:var(--muted)}.mini-row span:last-child{text-align:right}
+    section{padding:65px 0}.section-head{margin-bottom:28px}.kicker{color:var(--gold);font-size:.78rem;text-transform:uppercase;letter-spacing:.16em;font-weight:800}
+    h2.section-title{font-size:clamp(1.8rem,4vw,2.7rem);letter-spacing:-.04em;margin:7px 0 8px}.section-desc{color:var(--muted);max-width:700px;margin:0}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .card{border:1px solid rgba(255,255,255,.08);border-radius:20px;background:linear-gradient(145deg,rgba(255,255,255,.035),rgba(255,255,255,.012));padding:23px;transition:transform .2s,border-color .2s}
+    .card:hover{transform:translateY(-4px);border-color:var(--line)}
+    .icon{width:44px;height:44px;border-radius:13px;background:rgba(232,197,107,.1);border:1px solid var(--line);display:grid;place-items:center;font-size:1.25rem;margin-bottom:17px}
+    .card h3{margin:0 0 8px;font-size:1.1rem}.card p{margin:0;color:var(--muted);font-size:.94rem}
+    .about-layout{display:grid;grid-template-columns:.8fr 1.2fr;gap:18px}
+    .about-note{padding:28px;border-radius:22px;background:linear-gradient(145deg,rgba(232,197,107,.11),rgba(255,255,255,.02));border:1px solid var(--line)}
+    .about-note .quote{font-size:1.35rem;line-height:1.4;font-weight:700}.about-note .quote span{color:var(--gold)}
+    .about-copy{padding:28px;border-radius:22px;background:var(--panel);border:1px solid rgba(255,255,255,.07);color:var(--muted)}
+    .about-copy strong{color:var(--text)}
+    .tag-list{display:flex;gap:10px;flex-wrap:wrap;margin-top:17px}.tag{border:1px solid var(--line);background:rgba(232,197,107,.05);color:var(--gold2);padding:7px 12px;border-radius:999px;font-size:.88rem}
+    .timeline{border-left:1px solid rgba(232,197,107,.35);margin-left:8px;padding-left:24px}.timeline-item{position:relative;padding:0 0 25px}.timeline-item:before{content:"";position:absolute;left:-30px;top:8px;width:10px;height:10px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 5px rgba(232,197,107,.1)}.timeline-item h3{margin:0 0 4px}.timeline-item p{margin:0;color:var(--muted)}
+    .contact-panel{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:32px;border-radius:24px;border:1px solid var(--line);background:linear-gradient(120deg,rgba(232,197,107,.1),rgba(255,255,255,.025))}
+    .contact-panel h2{margin:0 0 8px;font-size:1.7rem}.contact-panel p{margin:0;color:var(--muted)}
+    footer{padding:28px 0 35px;border-top:1px solid rgba(255,255,255,.07);color:var(--muted);font-size:.88rem}.footer-inner{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+    .small-note{font-size:.82rem;color:var(--muted);margin-top:16px}
+    @media(max-width:800px){.hero{grid-template-columns:1fr;gap:28px;padding:60px 0 45px;min-height:auto}.profile-card{max-width:520px}.grid{grid-template-columns:repeat(2,1fr)}.about-layout{grid-template-columns:1fr}.contact-panel{align-items:flex-start;flex-direction:column}}
+    @media(max-width:560px){.wrap{width:min(100% - 26px,1100px)}.nav{min-height:64px}nav{display:none;position:absolute;top:64px;left:0;right:0;background:#101119;padding:18px 22px 22px;flex-direction:column;align-items:flex-start;border-bottom:1px solid var(--line)}nav.open{display:flex}.menu-btn{display:block}.hero{padding-top:44px}h1{font-size:2.7rem}.grid{grid-template-columns:1fr}section{padding:48px 0}.profile-card{padding:22px}.contact-panel{padding:24px}.actions .btn{width:100%}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#home">JK<span>.</span> PORTFOLIO</a>
+    <button class="menu-btn" id="menuBtn" aria-label="Open navigation" aria-expanded="false">☰</button>
+    <nav id="navLinks" aria-label="Main navigation">
+      <a href="#about">About</a><a href="#education">Education</a><a href="#skills">Skills & Interests</a><a href="#projects">Projects</a><a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap hero" id="home">
+    <div>
+      <div class="eyebrow"><span class="dot"></span> Personal Digital Portfolio</div>
+      <h1>Kotecha Jeet<br><span class="gold">Pareshbhai</span></h1>
+      <p>A curious learner exploring Agro & Food Processing, building practical knowledge, and growing through new experiences.</p>
+      <div class="actions">
+        <a class="btn primary" href="#about">Discover My Profile <span aria-hidden="true">↗</span></a>
+        <a class="btn secondary" href="#contact">Contact Section</a>
+      </div>
+    </div>
+    <aside class="profile-card" aria-label="Profile summary">
+      <div class="monogram">JK</div>
+      <h2>Kotecha Jeet Pareshbhai</h2>
+      <p class="role">B.Voc Agro & Food Processing</p>
+      <div class="mini-row"><span>Focus</span><span>Learning & Innovation</span></div>
+      <div class="mini-row"><span>Interests</span><span>Cricket · Reading · Stock Market</span></div>
+      <div class="mini-row"><span>Portfolio</span><span>Personal · Academic · Career</span></div>
+    </aside>
+  </div>
+
+  <section id="about">
+    <div class="wrap">
+      <div class="section-head"><div class="kicker">01 / About me</div><h2 class="section-title">A little about my journey</h2><p class="section-desc">A space to introduce who I am, what I am learning, and what I want to explore next.</p></div>
+      <div class="about-layout">
+        <div class="about-note"><div class="quote">“Learn with curiosity.<br><span>Grow with consistency.</span>”</div><p class="small-note">A personal motto — you can change this to your own line.</p></div>
+        <div class="about-copy">
+          <p>Hello! I’m <strong>Kotecha Jeet Pareshbhai</strong>, a student of <strong>B.Voc Agro & Food Processing</strong>. I’m interested in learning how food and agricultural products are processed, handled, and improved through practical methods.</p>
+          <p>This portfolio is a growing collection of my education, interests, projects, and achievements. I’ll add more details as I gain experience.</p>
+          <div class="tag-list"><span class="tag">Agro & Food Processing</span><span class="tag">Continuous Learning</span><span class="tag">Practical Thinking</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="wrap">
+      <div class="section-head"><div class="kicker">02 / Education</div><h2 class="section-title">My academic path</h2><p class="section-desc">My current course and the areas I am building knowledge in.</p></div>
+      <div class="card">
+        <div class="icon">🎓</div>
+        <h3>B.Voc Agro & Food Processing</h3>
+        <p>Current study area: agriculture, food processing, product handling, processing operations, and value addition.</p>
+        <p class="small-note">College name, study year, and expected graduation can be added when you provide them.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="wrap">
+      <div class="section-head"><div class="kicker">03 / Skills & interests</div><h2 class="section-title">What I enjoy</h2><p class="section-desc">These are my current interests. More professional skills can be added as I develop them.</p></div>
+      <div class="grid">
+        <article class="card"><div class="icon">🏏</div><h3>Cricket</h3><p>Enjoying the game, teamwork, focus, and the discipline that comes with practice.</p></article>
+        <article class="card"><div class="icon">📚</div><h3>Reading</h3><p>Exploring ideas, gaining knowledge, and learning from different perspectives.</p></article>
+        <article class="card"><div class="icon">📈</div><h3>Stock Market Learning</h3><p>Interested in the share market, market behaviour, and understanding trading concepts responsibly.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="wrap">
+      <div class="section-head"><div class="kicker">04 / Projects</div><h2 class="section-title">Projects & practical work</h2><p class="section-desc">A place to showcase college projects, practicals, presentations, and future work.</p></div>
+      <div class="grid">
+        <article class="card"><div class="icon">🌾</div><h3>Agro Processing</h3><p>Add your project title, objective, process flow chart, photos, and what you learned.</p></article>
+        <article class="card"><div class="icon">🥛</div><h3>Food Processing Practical</h3><p>Showcase product preparation, processing steps, equipment, quality, and safety details.</p></article>
+        <article class="card"><div class="icon">💡</div><h3>Innovation & Ideas</h3><p>Present your innovative models, problem-solving ideas, and community-focused concepts.</p></article>
+      </div>
+      <p class="small-note">These are editable placeholders, not claims of completed projects. Replace them with your real work.</p>
+    </div>
+  </section>
+
+  <section id="goals">
+    <div class="wrap">
+      <div class="section-head"><div class="kicker">05 / Goals</div><h2 class="section-title">What comes next</h2></div>
+      <div class="timeline">
+        <div class="timeline-item"><h3>Keep learning</h3><p>Build a strong foundation in Agro & Food Processing.</p></div>
+        <div class="timeline-item"><h3>Gain practical experience</h3><p>Connect classroom learning with real processing methods and industry practices.</p></div>
+        <div class="timeline-item"><h3>Build a strong portfolio</h3><p>Add verified projects, certificates, internships, and achievements over time.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="contact-panel">
+        <div><div class="kicker">06 / Contact</div><h2>Let’s connect</h2><p>Contact details will appear here once you add the email address or professional profile you want to share.</p></div>
+        <a class="btn primary" href="mailto:?subject=Portfolio%20Contact%20-%20Jeet%20Kotecha">Set up email contact ↗</a>
+      </div>
+      <p class="small-note">For privacy, no phone number, email address, or social profile has been invented or published.</p>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap footer-inner"><span>© <span id="year"></span> Kotecha Jeet Pareshbhai</span><span>Designed with a Dark Premium style ✦</span></div></footer>
+<script>
+  const menuBtn = document.getElementById('menuBtn');
+  const navLinks = document.getElementById('navLinks');
+  menuBtn.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded', String(isOpen));
+    menuBtn.textContent = isOpen ? '✕' : '☰';
+  });
+  navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    menuBtn.setAttribute('aria-expanded', 'false');
+    menuBtn.textContent = '☰';
+  }));
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
